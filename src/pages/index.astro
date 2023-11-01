@@ -1,15 +1,14 @@
 ---
 import Mylayaout from '../layouts/Mylayaout.astro';
 import Dropbox from '../components/Dropbox.astro';
-import Slider from '../components/Slider.astro'
+import Slider from '../components/Slider.astro';
 ---
-
 <Mylayaout title="Grupo ABO" >
 	<main class="bg-red-100 relative flex flex-col place-items-center place-content-center h-screen gap-4 p-4">
 		<section>
 			<div class="bg-red-300 border max-w-2xl min-w-min max-h-full min-h-min rounded-2xl p-4 grid grid-cols-2 grid-rows-3 gap-2 ">
 				<Dropbox
-					name='Grupo Sanguineo',
+					name='GrupoSanguineo',
 					id='groups',
 					desc='Seleccione grupo sanguineo:',
 					options={['A','B','AB','O']}
@@ -20,17 +19,19 @@ import Slider from '../components/Slider.astro'
 					desc='Seleccione RH:',
 					options={['Positivo', 'Negativo']}
 				/>
-				<button class="bg-red-500 col-span-2 rounded-md font-bold">Submit</button>
+				<button id="submit" class="bg-red-500 col-span-2 rounded-md font-bold">Submit</button>
 			</div>
 		</section>
 		<section>
 			<div class="bg-red-200 border max-w-2xl min-w-min max-h-full min-h-min rounded-2xl p-4 grid grid-cols-2 grid-rows-3 gap-2 ">
 				<p>Te puede donar el grupo tal |</p>
 				<p>| Le puedes donar al grupo tal</p>
+				<div id="results1"></div>
+				<div id="results2"></div>
 			</div>
-			<p>Este sera la vista de resultados</p>
 		</section>
 		<p>Este switch es para activar el modo avanzado (subgrupos etc)</p>
 		<Slider />
 	</main>
+	<script src="../scripts/abo.js"></script>
 </Mylayaout>
