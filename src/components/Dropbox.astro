@@ -1,0 +1,15 @@
+---
+interface Props {
+	name: string;
+	id: string;
+	desc: string;
+	options: Array<string>;
+}
+const {name, id, desc, options} = Astro.props as Props;
+---
+<label for={id} class="font-bold">{desc}</label>
+<select name={name} id={id} class="min-w-[20%] h-10 bg-red-400 rounded-md p-2">
+	{options.map((opt) =>(
+		<option value={opt}>{opt}</option>
+	)) }
+</select>
