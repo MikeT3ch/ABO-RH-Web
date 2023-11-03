@@ -1,9 +1,20 @@
 ---
-import Mylayaout from '../layouts/Mylayaout.astro';
+import Mylayout from '../layouts/Mylayout.astro';
 import Dropbox from '../components/Dropbox.astro';
 import Slider from '../components/Slider.astro';
 ---
-<Mylayaout title="Grupo ABO" >
+<Mylayout title="Grupo ABO" >
+	<header class="bg-red-100">
+		<ul class="bg-red-200
+			flex-row flex
+			place-items-center justify-items-center place-content-center text-center
+			gap-4 p-4 text-l 
+			rounded-t-none rounded-[1rem]">
+			<li class="border border-red-300 bg-red-300 p-1 rounded-[0.5rem]"><a href="">Grupos ABO</a></li>
+			<li class="border border-red-300 bg-red-300 p-1 rounded-[0.5rem]"><a href="">Calculadora INR</a></li>
+			<li class="border border-red-300 bg-red-300 p-1 rounded-[0.5rem]"><a href="">Conversor Unidades</a></li>
+		</ul>
+	</header>
 	<main class="bg-red-100 relative flex flex-col place-items-center place-content-center h-screen gap-4 p-4">
 		<section>
 			<div class="bg-red-300 border max-w-2xl min-w-min max-h-full min-h-min rounded-2xl p-4 grid grid-cols-2 grid-rows-3 gap-2 ">
@@ -34,4 +45,4 @@ import Slider from '../components/Slider.astro';
 		<Slider />
 	</main>
 	<script src="../scripts/abo.js"></script>
-</Mylayaout>
+</Mylayout>
