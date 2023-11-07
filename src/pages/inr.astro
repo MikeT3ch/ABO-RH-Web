@@ -1,7 +1,35 @@
 ---
 import Mylayout from '../layouts/Mylayout.astro';
+import Navbar from '../components/navbar.astro';
 ---
 
 <Mylayout title="Calculadora INR">
-
+	<Navbar color='blue' />
+	<main class="bg-blue-100 relative flex flex-col place-items-center place-content-center h-screen gap-4 p-4">
+		<section>
+			<div class="bg-blue-300 border max-w-2xl min-w-min max-h-full min-h-min rounded-2xl p-4 grid grid-cols-2 grid-rows-4 gap-2 ">
+				<div class="flex flex-row gap-4 p-2 col-span-2 justify-end">
+					<label for="ptp">PT<sub>paciente</sub></label>
+					<input type="text" name="ptp" id="ptp">
+				</div>
+				<div class="flex flex-row gap-4 p-2 col-span-2 justify-end">
+					<label for="ptc">PT<sub>control</sub></label>
+					<input type="text" name="ptc" id="ptc">
+				</div>
+				<div class="flex flex-row gap-4 p-2 col-span-2 justify-end">
+					<label for="isi">ISI</label>
+					<input type="text" name="isi" id="isi">
+				</div>
+				<button id="calcular" class="bg-blue-500 col-span-1 rounded-md font-bold">Calcular</button>
+				<button id="clear" class="bg-blue-500 col-span-1 rounded-md font-bold">Clear</button>
+			</div>
+		</section>
+		<section>
+			<div class="bg-blue-200 border max-w-2xl min-w-min max-h-full min-h-min rounded-2xl p-4 grid grid-cols-1 grid-rows-2 gap-2">
+				<p>Su INR es de:</p>
+				<div id="resultado"></div>
+			</div>
+		</section>
+	</main>
+	<script src="../scripts/inrCalc.js"></script>
 </Mylayout>

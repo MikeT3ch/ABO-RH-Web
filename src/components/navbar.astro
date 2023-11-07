@@ -1,0 +1,14 @@
+---
+const { color } = Astro.props;
+---
+<header class={`bg-${color}-200`}>
+	<ul class={`bg-${color}-200
+		flex-row flex
+		place-items-center justify-items-center place-content-center text-center
+		gap-4 p-4 text-l 
+		rounded-t-none rounded-[1rem]`}>
+		<li class={`border border-${color}-300 bg-${color}-300 p-1 rounded-[0.5rem]`}><a href="/ABO-RH-Web/">Grupos ABO</a></li>
+		<li class={`border border-${color}-300 bg-${color}-300 p-1 rounded-[0.5rem]`}><a href="/ABO-RH-Web/inr">Calculadora INR</a></li>
+		<li class={`border border-${color}-300 bg-${color}-300 p-1 rounded-[0.5rem]`}><a href="/ABO-RH-Web/conver">Conversor Unidades</a></li>
+	</ul>
+</header>
