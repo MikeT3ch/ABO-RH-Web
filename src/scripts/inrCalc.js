@@ -1,19 +1,12 @@
-const ptPaciente = parseFloat(document.querySelector('#ptp').value);
-const ptControl = parseFloat (document.querySelector('#ptc').value);
-const isi = parseFloat(document.querySelector('#isi').value);
-const resultado = document.querySelector('#resultado');
-
-const calcBtn = document.querySelector('#calcular');
-calcBtn.addEventListener('click', () => {
-	calcular();
-})
-
-const clearBtn = document.querySelector('#clear');
-clearBtn.addEventListener('click', () => {
-	limpiar();
-})
-
 function calcular() {
+  const $paciente = document.querySelector('#ptp'),
+  $control = document.querySelector('#ptc'),
+  $isi = document.querySelector('#isi');
+
+  var ptPaciente = parseFloat($paciente.value);
+  var ptControl = parseFloat($control.value);
+  var isi = parseFloat($isi.value);
+
   if (!isNaN(ptPaciente) && !isNaN(ptControl) && !isNaN(isi)) {
     var r1 = dividirPT(ptPaciente, ptControl);
     var resultado = elevacion(r1, isi);
@@ -34,11 +27,28 @@ function dividirPT(ptp, ptc) {
 }
 
 function limpiar() {
-	ptPaciente = '';
-	ptControl = '';
-	isi = '';
-	resultado.innerText = '';
+  const $paciente = document.querySelector('#ptp'),
+  $control = document.querySelector('#ptc'),
+  $isi = document.querySelector('#isi'),
+  $resultado = document.querySelector('#resultado');
+
+  $paciente.value ='';
+  $control.value = '';
+  $isi.value = '';
+  $resultado.innerText = '';
 }
+
+var calcBtn = document.querySelector('#calcBtn');
+calcBtn.addEventListener('click', () => {
+  calcular();
+})
+
+var clearBtn = document.querySelector('#clearBtn');
+clearBtn.addEventListener('click', () => {
+  limpiar();
+})
+
 document.getElementById('ptp').addEventListener('input', calcular);
 document.getElementById('ptc').addEventListener('input', calcular);
 document.getElementById('isi').addEventListener('input', calcular);
+

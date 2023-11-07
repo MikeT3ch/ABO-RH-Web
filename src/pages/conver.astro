@@ -1,11 +1,13 @@
 ---
 import Mylayout from '../layouts/Mylayout.astro';
-import Navbar from '../components/navbar.astro';
+import Navbar from '../components/Navbar.astro';
+import Wip from '../components/Wip.astro';
 ---
 
 <Mylayout title="Conversor de Unidades">
 	<Navbar color='gray' />
-	<main class="bg-gray-100 relative flex flex-col place-items-center place-content-center h-screen gap-4 p-4">
+	<Wip />
+	<main class="hidden bg-gray-100 relative flex flex-col place-items-center place-content-center h-screen gap-4 p-4">
 		<section>
 			<div class="bg-gray-300 border max-w-2xl min-w-min max-h-full min-h-min rounded-2xl p-4 grid grid-cols-2 grid-rows-3 gap-2 ">
 				<button id="submit" class="bg-gray-500 col-span-2 rounded-md font-bold">Submit</button>

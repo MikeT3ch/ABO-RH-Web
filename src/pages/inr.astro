@@ -1,6 +1,6 @@
 ---
 import Mylayout from '../layouts/Mylayout.astro';
-import Navbar from '../components/navbar.astro';
+import Navbar from '../components/Navbar.astro';
 ---
 
 <Mylayout title="Calculadora INR">
@@ -20,8 +20,8 @@ import Navbar from '../components/navbar.astro';
 					<label for="isi">ISI</label>
 					<input type="text" name="isi" id="isi">
 				</div>
-				<button id="calcular" class="bg-blue-500 col-span-1 rounded-md font-bold">Calcular</button>
-				<button id="clear" class="bg-blue-500 col-span-1 rounded-md font-bold">Clear</button>
+				<button id="calcBtn" class="bg-blue-500 col-span-1 rounded-md font-bold">Calcular</button>
+				<button id="clearBtn" class="bg-blue-500 col-span-1 rounded-md font-bold">Clear</button>
 			</div>
 		</section>
 		<section>
@@ -31,5 +31,5 @@ import Navbar from '../components/navbar.astro';
 			</div>
 		</section>
 	</main>
-	<script src="../scripts/inrCalc.js"></script>
+	<script src="../scripts/inrCalc.js" />
 </Mylayout>
