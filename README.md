@@ -1,5 +1,13 @@
 # Astro Starter Kit: Basics
 
+TODO:
+LDH
+TRIGLICERIDOS
+CURVAS
+HDL
+DEPURACION
+PROTEINURIA
+
 ```sh
 npm create astro@latest -- --template basics
 ```
