@@ -5,11 +5,16 @@ const { color } = Astro.props;
 	<ul class={`bg-${color}-200
 flex-row flex
 place-items-center justify-items-center place-content-center text-center
-gap-4 p-2 text-l 
+gap-2 p-2 text-[0.8rem] md:text-xl sm:text-[1rem] font-bold 
 h-[5rem]
 rounded-t-none rounded-[1rem]`}>
-		<li class={`min-h-[70%] border border-${color}-300 bg-${color}-300 p-1 rounded-[0.5rem]`}><a href="/ABO-RH-Web/">Grupos ABO</a></li>
-		<li class={`min-h-[70%] border border-${color}-300 bg-${color}-300 p-1 rounded-[0.5rem]`}><a href="/ABO-RH-Web/inr">Calculadora INR</a></li>
-		<li class={`min-h-[70%] border border-${color}-300 bg-${color}-300 p-1 rounded-[0.5rem]`}><a href="/ABO-RH-Web/conver">Conversor Unidades</a></li>
+		<li class={` min-h-[60%] border border-${color}-300 bg-${color}-300 p-1 rounded-[0.5rem]`}>
+			<a class="box-border block " href="/microutilidades/">Grupos ABO</a></li>
+		<li class={`min-h-[60%] border border-${color}-300 bg-${color}-300 p-1 rounded-[0.5rem]`}>
+			<a class="box-border block " href="/microutilidades/inr">Calculadora INR</a></li>
+		<li class={`min-h-[60%] border border-${color}-300 bg-${color}-300 p-1 rounded-[0.5rem]`}>
+			<a class="box-border block " href="/microutilidades/conver">Conversor Unidades</a></li>
+		<li class={`min-h-[60%] border border-${color}-300 bg-${color}-300 p-1 rounded-[0.5rem]`}>
+			<a class="box-border block " href="/microutilidades/depuracion">Depuracion de Creatinina</a></li>
 	</ul>
 </header>
