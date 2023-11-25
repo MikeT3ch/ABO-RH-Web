@@ -1,6 +1,7 @@
 ---
 import Mylayout from "../layouts/Mylayout.astro";
 import Navbar from "../components/Navbar.astro";
+import Dropbox from "../components/Dropbox.astro";
 ---
 
 <Mylayout title="Depuracion de Creatinina">
@@ -31,19 +32,30 @@ import Navbar from "../components/Navbar.astro";
 			<div class="bg-pink-300 border max-w-2xl min-w-min max-h-full min-h-min rounded-2xl p-2 grid grid-cols-2 grid-rows-3 gap-1 ">	
 				<div class="flex flex-row gap-4 p-2 col-span-2 justify-end">
 					<label class="font-bold" for="cro">CrO <sub>Orina</sub></label>
-					<input class="min-w-0 h-fit" type="text" name="cro" id="cro">
+					<input class="min-w-0 h-fit p-1" type="text" name="cro" id="cro">
 				</div>
 				<div class="flex flex-row gap-4 p-2 col-span-2 justify-end">
 					<label class="font-bold" for="crs">CrS <sub>Sangre</sub></label>
-					<input class="min-w-0 h-fit" type="text" name="crs" id="crs">
+					<input class="min-w-0 h-fit p-1" type="text" name="crs" id="crs">
 				</div>
-				<div class="flex flex-row gap-4 p-2 col-span-2 justify-end">
+				<div class="flex flex-row gap-4 p-2 col-span-2 justify-start">
 					<label class="font-bold" for="dil">Dil <sub>Orina</sub></label>
-					<input class="min-w-0 h-fit" type="text" name="dil" id="dil">
+					<div class="h-fit">
+						<Dropbox 
+							name='dil',
+							id='dil',
+							desc=""
+							options={['50', '40', '30', '20', '10']},
+
+							color='pink-50'
+						/>
+					</div>
+
 				</div>
+				
 				<div class="flex flex-row gap-4 p-2 col-span-2 justify-end">
 					<label class="font-bold" for="dil">VolO <sub>24h</sub></label>
-					<input class="min-w-0 h-fit" type="text" name="vol" id="vol">
+					<input class="min-w-0 h-fit p-1" type="text" name="vol" id="vol">
 				</div>
 				<button id="calcBtn" class="bg-pink-500 col-span-1 rounded-md font-bold">Calcular</button>
 				<button id="clearBtn" class="bg-pink-500 col-span-1 rounded-md font-bold">Clear</button>

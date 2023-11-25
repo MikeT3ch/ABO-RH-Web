@@ -12,13 +12,15 @@ import Navbar from '../components/Navbar.astro';
 					name='GrupoSanguineo',
 					id='groups',
 					desc='Seleccione grupo sanguineo:',
-					options={['A','B','AB','O']}
+					options={['A','B','AB','O']},
+					color='red-400'
 				/>
 				<Dropbox
 					name='RH',
 					id='rh',
 					desc='Seleccione RH:',
-					options={['Positivo', 'Negativo']}
+					options={['Positivo', 'Negativo']},
+					color='red-400'
 				/>
 				<button id="submit" class="bg-red-500 col-span-2 rounded-md font-bold">Submit</button>
 			</div>
