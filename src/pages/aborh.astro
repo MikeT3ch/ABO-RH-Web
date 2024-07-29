@@ -3,11 +3,11 @@ import Mylayout from '../layouts/Mylayout.astro';
 import Dropbox from '../components/Dropbox.astro';
 import Navbar from '../components/Navbar.astro';
 ---
-<Mylayout title="Grupo ABO" >
-	<Navbar color='red' />
-	<main class="bg-red-100 relative flex flex-col place-items-center place-content-center h-screen gap-4 p-4">
+<Mylayout title="Grupo ABO" color="gray">
+	<Navbar color='violet' value='200' />
+	<main class="bg-gray-100 relative flex flex-col place-items-center place-content-center gap-4 p-4">
 		<section>
-			<div class="bg-red-300 border max-w-2xl min-w-min max-h-full min-h-min rounded-2xl p-4 grid grid-cols-2 grid-rows-3 gap-2 ">
+			<div class="bg-violet-300 border max-w-2xl min-w-min max-h-full min-h-min rounded-2xl p-4 grid grid-cols-2 grid-rows-3 gap-2 ">
 				<Dropbox
 					name='GrupoSanguineo',
 					id='groups',
@@ -22,11 +22,11 @@ import Navbar from '../components/Navbar.astro';
 					options={['Positivo', 'Negativo']},
 					color='red-400'
 				/>
-				<button id="submit" class="bg-red-500 col-span-2 rounded-md font-bold">Submit</button>
+				<button id="submit" class="bg-violet-500 col-span-2 rounded-md font-bold">Submit</button>
 			</div>
 		</section>
 		<section>
-			<div class="bg-red-200 border max-w-2xl min-w-min max-h-full min-h-min rounded-2xl p-4 grid grid-cols-2 grid-rows-3 gap-2 ">
+			<div class="bg-violet-200 border max-w-2xl min-w-min max-h-full min-h-min rounded-2xl p-4 grid grid-cols-2 grid-rows-3 gap-2 ">
 				<p>Te pueden donar los grupos: </p>
 				<p> Le puedes donar a los grupos:</p>
 				<div id="results1"></div>

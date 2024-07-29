@@ -1,11 +1,17 @@
 function calcular() {
-  const $paciente = document.querySelector('#ptp'),
-  $control = document.querySelector('#ptc'),
-  $isi = document.querySelector('#isi');
+  const 
+  tmpPaciente = document.querySelector('#ptp'),
+  tmpControl = document.querySelector('#ptc'),
+  tmpIsi = document.querySelector('#isi');
 
-  var ptPaciente = parseFloat($paciente.value);
-  var ptControl = parseFloat($control.value);
-  var isi = parseFloat($isi.value);
+  var $paciente = tmpPaciente.value.replace(/[^\d\.\-]/g, ".");
+  var $control = tmpControl.value.replace(/[^\d\.\-]/g, ".");
+  var $isi = tmpIsi.value.replace(/[^\d\.\-]/g, ".");
+
+
+  var ptPaciente = parseFloat($paciente);
+  var ptControl = parseFloat($control);
+  var isi = parseFloat($isi);
 
   if (!isNaN(ptPaciente) && !isNaN(ptControl) && !isNaN(isi)) {
     var r1 = dividirPT(ptPaciente, ptControl);
@@ -14,7 +20,7 @@ function calcular() {
 
     document.getElementById('resultado').innerText = resultado;
   } else {
-    document.getElementById('resultado').innerText = '';
+    document.getElementById('resultado').innerText = 'Ingrese los valores';
   }
 }
 function elevacion(division, isi) {

@@ -3,11 +3,12 @@ import Mylayout from '../layouts/Mylayout.astro';
 import Navbar from '../components/Navbar.astro';
 ---
 
-<Mylayout title="Calculadora INR">
-	<Navbar color='blue' />
-	<main class="bg-blue-100 relative flex flex-col place-items-center place-content-center h-screen gap-4 p-4">
+<Mylayout title="Calculadora INR" color="gray">
+	<Navbar color='blue' value='200' />
+	<main class="bg-gray-100 relative flex flex-col place-items-center place-content-center gap-4 p-4">
+		<h1 class="font-bold text-[1.5rem] text-center p-2">Indice Internacional Normalizado</h1>
 		<section>
-			<div class="bg-blue-300 border max-w-2xl min-w-min max-h-full min-h-min rounded-2xl p-4 grid grid-cols-2 grid-rows-4 gap-2 text-[1rem] ">
+			<div class="bg-blue-300 border max-w-2xl min-w-min max-h-full min-h-min rounded-md p-4 grid grid-cols-2 grid-rows-4 gap-2 text-[1rem] ">
 				<div class="flex flex-row gap-4 p-2 col-span-2 justify-end">
 					<label class="font-bold" for="ptp">PT<sub>paciente</sub></label>
 					<input class="min-w-0" type="text" name="ptp" id="ptp">
@@ -22,14 +23,22 @@ import Navbar from '../components/Navbar.astro';
 				</div>
 				<button id="calcBtn" class="bg-blue-500 col-span-1 rounded-md font-bold">Calcular</button>
 				<button id="clearBtn" class="bg-blue-500 col-span-1 rounded-md font-bold">Clear</button>
+				<div class="bg-blue-300 rounded-md p-4 grid grid-cols-1 grid-rows-2 gap-2 text-[1rem]">
+					<p class="font-bold">Su INR es de:</p>
+					<div class="text-xl" id="resultado"></div>
+				</div>
 			</div>
 		</section>
-		<section>
-			<div class="bg-blue-200 border max-w-2xl min-w-min max-h-full min-h-min rounded-2xl p-4 grid grid-cols-1 grid-rows-2 gap-2 text-[1rem]">
-				<p class="font-bold">Su INR es de:</p>
-				<div id="resultado"></div>
-			</div>
-		</section>
+		<br>
+		<div class="max-w-2xl min-w-min">
+			<h1 class="font-bold text-[1rem] text-center p-2">Información</h1>
+			<p class="p-2 text-center">El índice internacional normalizado (international normalized ratio; INR) es una forma de estandarizar los cambios obtenidos a través del tiempo de protrombina. Se usa principalmente para el seguimiento de pacientes bajo tratamiento anticoagulante. Se usa la formula: <br> <br>
+				<math class="md:text-[1.5rem] md:p-4" xmlns='http://www.w3.org/1998/Math/MathML'>
+					<mi>INR</mi><mo>=</mo><msup><mfenced><mfrac><mi>TP:test</mi><mi>TP:control</mi></mfrac></mfenced><mi>ISI</mi></msup></math>
+				</math>
+			</p>
+		</div>
+
 	</main>
 	<script src="../scripts/inrCalc.js" />
 </Mylayout>
