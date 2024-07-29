@@ -1,0 +1,15 @@
+---
+import Layout from '../../layouts/Mylayout.astro'
+import Navbar from '../../components/Navbar.astro'
+import HDL from '../help/calculo_hdl.md'
+---
+<Layout title="Calculo HDL" color="gray">
+	<section class="w-screen">
+		<Navbar color="indigo" value="200" />
+		<div class="flex flex-col items-center p-8">
+			<article class="prose xl:prose-sm lg:prose-lg">
+				<HDL />
+			</article>
+		</div>
+	</section>
+</Layout>

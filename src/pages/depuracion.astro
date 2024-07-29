@@ -2,34 +2,16 @@
 import Mylayout from "../layouts/Mylayout.astro";
 import Navbar from "../components/Navbar.astro";
 import Dropbox from "../components/Dropbox.astro";
+const color = 'indigo';
 ---
 
-<Mylayout title="Depuracion de Creatinina">
-	<Navbar color='pink'/>
-	<main class="bg-pink-100 relative flex flex-col place-items-center md:place-content-center h-screen gap-4 p-4">
+<Mylayout title="Depuracion de Creatinina" color="gray">
+	<Navbar color='indigo' value='200' />
+	<main class="bg-gray-100 relative flex flex-col place-items-center md:place-content-center gap-4 p-4">
 		<h1 class="font-bold text-[1.5rem] text-center p-2">Depuracion de Creatinina</h1>
-		<p class="p-2 text-center">Los valores de creatinina deben ser en mg/dl. Se usa la formula: <br> <br>
-			<math class="md:text-[1.5rem] md:p-4" xmlns='http://www.w3.org/1998/Math/MathML'>
-				<mrow>
-					<mfrac>
-						<mrow>
-							<mi>Creatinina en Orina</mi>
-							<mo>*</mo>
-							<mi>Dil</mi>
-						</mrow>
-						<mi>Creatinina en Sangre</mi>
-					</mfrac>
-					<mo>*</mo>
-					<mfrac>
-						<mi>Volumen de orina en 24h</mi>
-						<mn>1440</mn>
-					</mfrac>
-				</mrow>
-			</math>
-		</p>
 
 		<section>
-			<div class="bg-pink-300 border max-w-2xl min-w-min max-h-full min-h-min rounded-2xl p-2 grid grid-cols-2 grid-rows-3 gap-1 ">	
+			<div class="bg-indigo-300 border border-black shadow-black shadow max-w-2xl min-w-min max-h-full min-h-min rounded-md p-2 grid grid-cols-2 grid-rows-3 gap-1 ">	
 				<div class="flex flex-row gap-4 p-2 col-span-2 justify-end">
 					<label class="font-bold" for="cro">CrO <sub>Orina</sub></label>
 					<input class="min-w-0 h-fit p-1" type="text" name="cro" id="cro">
@@ -42,31 +24,55 @@ import Dropbox from "../components/Dropbox.astro";
 					<label class="font-bold" for="dil">Dil <sub>Orina</sub></label>
 					<div class="h-fit">
 						<Dropbox 
-							name='dil',
-							id='dil',
-							desc=""
-							options={['50', '40', '30', '20', '10']},
+						name='dil',
+						id='dil',
+						desc=""
+						options={['50', '40', '30', '20', '10']},
 
-							color='pink-50'
+						color='pink-50'
 						/>
 					</div>
 
 				</div>
-				
+
 				<div class="flex flex-row gap-4 p-2 col-span-2 justify-end">
 					<label class="font-bold" for="dil">VolO <sub>24h</sub></label>
 					<input class="min-w-0 h-fit p-1" type="text" name="vol" id="vol">
 				</div>
-				<button id="calcBtn" class="bg-pink-500 col-span-1 rounded-md font-bold">Calcular</button>
-				<button id="clearBtn" class="bg-pink-500 col-span-1 rounded-md font-bold">Clear</button>
+				<button id="calcBtn" class="bg-indigo-500 col-span-1 rounded-md font-bold">Calcular</button>
+				<button id="clearBtn" class="bg-indigo-500 col-span-1 rounded-md font-bold">Clear</button>
+				<div class="bg-indigo-300 rounded-md p-4 grid grid-cols-1 grid-rows-2 gap-2 text-[1rem]">
+					<p class="font-bold">Resultado en mL/min:</p>
+					<div class="text-xl" id="resultado"></div>
+				</div>
 			</div>
 		</section>
 		<section>
-			<div class="bg-pink-200 border max-w-2xl min-w-min max-h-full min-h-min rounded-2xl p-4 grid grid-cols-1 grid-rows-2 gap-2 text-[1rem]">
-				<p class="font-bold">Resultado en mL/min:</p>
-				<div id="resultado"></div>
-			</div>
 		</section>
+		<br>
+		<div class="max-w-2xl min-w-min">
+			<h1 class="font-bold text-[1rem] text-center p-2">Información</h1>
+			<p class="p-2 text-center">Los valores de creatinina deben ser en mg/dl. Se usa la formula: <br> <br>
+				<math class="md:text-[1.5rem] md:p-4" xmlns='http://www.w3.org/1998/Math/MathML'>
+					<mrow>
+						<mfrac>
+							<mrow>
+								<mi>Creatinina en Orina</mi>
+								<mo>*</mo>
+								<mi>Dil</mi>
+							</mrow>
+							<mi>Creatinina en Sangre</mi>
+						</mfrac>
+						<mo>*</mo>
+						<mfrac>
+							<mi>Volumen de orina en 24h</mi>
+							<mn>1440</mn>
+						</mfrac>
+					</mrow>
+				</math>
+			</p>
+
+		</div>
 	</main>
 	<script src="../scripts/depcret.js"/>
 </Mylayout>

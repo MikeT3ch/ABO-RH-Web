@@ -1,0 +1,61 @@
+---
+import Mylayout from "../layouts/Mylayout.astro";
+import Navbar from "../components/Navbar.astro";
+---
+
+<Mylayout title="Colesterol" color="gray">
+	<Navbar color='stone' value='300'/>
+	<main class="bg-gray-100 relative flex flex-col place-items-center md:place-content-center gap-4 p-4">
+		<h1 class="font-bold text-[1.5rem] text-center p-2">Colesterol</h1>
+		<section>
+			<div class="bg-stone-300 border max-w-2xl min-w-min max-h-full min-h-min rounded-l p-2 grid grid-cols-2 grid-rows-3 gap-1 ">	
+				<div class="flex flex-row gap-4 p-2 col-span-2 justify-end">
+					<label class="font-bold" for="colt">Col <sub>Total</sub></label>
+					<input class="min-w-0 h-fit p-1" type="text" name="colt" id="colt">
+				</div>
+				<div class="flex flex-row gap-4 p-2 col-span-2 justify-end">
+					<div>
+						<input type="checkbox" name="hdlChk" id="hdlChk" checked>
+						<label for="hdlChk" class="text-sm">Calc HDL</label>
+
+					</div>
+					<label class="font-bold" for="hdl">Col <sub>HDL</sub></label>
+					<input class="min-w-0 h-fit p-1" type="text" name="hdl" id="hdl">
+				</div>
+				<div class="flex flex-row gap-4 p-2 col-span-2 justify-end">
+					<label class="font-bold" for="trig">Trig</label>
+					<input class="min-w-0 h-fit p-1" type="text" name="trig" id="trig">
+				</div>
+				<button id="calcBtn" class="bg-stone-400 col-span-1 rounded-l font-bold">Calcular</button>
+				<button id="clearBtn" class="bg-stone-400 col-span-1 rounded-l font-bold">Clear</button>
+				<div>
+					<div class="bg-stone-300 min-h-min rounded-l p-4 grid grid-cols-1 grid-rows-2 gap-2 text-[1rem]">
+						<p class="font-bold">LDL:</p>
+						<div id="resultado_ldl"></div>
+					</div>
+					<div class="bg-stone-300 min-h-min rounded-l p-4 grid grid-cols-1 grid-rows-2 gap-2 text-[1rem]">
+						<p class="font-bold">VLDL:</p>
+						<div id="resultado_vldl"></div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+		<div class="max-w-2xl min-w-min">
+			<h1 class="font-bold text-[1rem] text-center p-2">Información</h1>
+			<p class="p-2 text-center">Se usan las formulas: <br> <br>
+				<math class="md:text-[1.5rem] md:p-4" xmlns='http://www.w3.org/1998/Math/MathML'>
+					<mi>VLDL</mi><mo>=</mo><mi>Colesterol</mi><mo>/</mo><mn>5</mn>
+				</math>
+				<br> <br>
+				<math class="md:text-[1.5rem] md:p-4" xmlns='http://www.w3.org/1998/Math/MathML'>
+					<mi>LDL</mi><mo>=</mo><mi>Colesterol</mi><mo>-</mo><mo>(</mo><mi>VLDL</mi><mo>+</mo><mi>HDL</mi><mo>)</mo>
+				</math>
+
+			</p>
+		</div>
+	</main>
+	<script src="../scripts/colesterol.js"/>
+</Mylayout>
+
+
