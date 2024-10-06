@@ -2,16 +2,15 @@
 import Mylayout from "../layouts/Mylayout.astro";
 import Navbar from "../components/Navbar.astro";
 import Dropbox from "../components/Dropbox.astro";
-const color = 'indigo';
 ---
 
 <Mylayout title="Depuracion de Creatinina" color="gray">
-	<Navbar color='indigo' value='200' />
+	<Navbar color="bg-indigo-200" />
 	<main class="bg-gray-100 relative flex flex-col place-items-center md:place-content-center gap-4 p-4">
 		<h1 class="font-bold text-[1.5rem] text-center p-2">Depuracion de Creatinina</h1>
 
 		<section>
-			<div class="bg-indigo-300 border border-black shadow-black shadow max-w-2xl min-w-min max-h-full min-h-min rounded-md p-2 grid grid-cols-2 grid-rows-3 gap-1 ">	
+			<div class="bg-indigo-300 max-w-2xl min-w-min max-h-full min-h-min rounded-md p-2 grid grid-cols-2 grid-rows-3 gap-1">	
 				<div class="flex flex-row gap-4 p-2 col-span-2 justify-end">
 					<label class="font-bold" for="cro">CrO <sub>Orina</sub></label>
 					<input class="min-w-0 h-fit p-1" type="text" name="cro" id="cro">
@@ -29,7 +28,7 @@ const color = 'indigo';
 						desc=""
 						options={['50', '40', '30', '20', '10']},
 
-						color='pink-50'
+						color='bg-indigo-50'
 						/>
 					</div>
 

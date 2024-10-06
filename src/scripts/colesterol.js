@@ -1,8 +1,8 @@
 function calcular() {
-  const 
-  $col = document.querySelector('#colt'),
-  $hdl = document.querySelector('#hdl'),
-  $trig = document.querySelector('#trig');
+  const
+    $col = document.querySelector('#colt'),
+    $hdl = document.querySelector('#hdl'),
+    $trig = document.querySelector('#trig');
   var hdlCheck = document.getElementById('hdlChk');
   var isChecked = hdlCheck.checked;
 
@@ -38,14 +38,14 @@ function calcular() {
 }
 function calcularHdl(col) {
   var hdl;
-  if (col <= 170 && col > 0) {
+  if (col <= 160 && col > 0) {
     hdl = col / 3;
-  } else if (col > 170 && col <= 200) {
+  } else if (col > 160 && col < 200) {
     hdl = col / 4;
   } else if (col > 200) {
     hdl = col / 5;
   } else {
-    alert("El hdl no puede ser negativo");
+    hdl = 0;
   }
   return hdl;
 }
@@ -59,14 +59,14 @@ function calcularVldl(trig) {
 }
 
 function limpiar() {
-  const 
-  $col = document.querySelector('#colt'),
-  $hdl = document.querySelector('#hdl'),
-  $trig = document.querySelector('#trig'),
-  $resultado_ldl = document.querySelector('#resultado_ldl'),
-  $resultado_vldl = document.querySelector('#resultado_vldl');
+  const
+    $col = document.querySelector('#colt'),
+    $hdl = document.querySelector('#hdl'),
+    $trig = document.querySelector('#trig'),
+    $resultado_ldl = document.querySelector('#resultado_ldl'),
+    $resultado_vldl = document.querySelector('#resultado_vldl');
 
-  $col.value ='';
+  $col.value = '';
   $hdl.value = '';
   $trig.value = '';
   $resultado_ldl.innerText = '';

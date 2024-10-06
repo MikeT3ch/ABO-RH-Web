@@ -1,8 +1,8 @@
 function calcular() {
 	const $creaO = document.querySelector('#cro'),
-	$creaS = document.querySelector('#crs'),
-	$dil = document.querySelector('#dil'),
-	$vol = document.querySelector('#vol');
+		$creaS = document.querySelector('#crs'),
+		$dil = document.querySelector('#dil'),
+		$vol = document.querySelector('#vol');
 
 	var cro = parseFloat($creaO.value);
 	var crs = parseFloat($creaS.value);
@@ -11,9 +11,9 @@ function calcular() {
 
 	if (!isNaN(cro) && !isNaN(crs) && !isNaN(dil) && !isNaN(vol)) {
 		// TODO: Implementacion de formula de creatinina
-		var f1, f2, min=1440;
-		f1 = ((cro*dil)/crs)
-		f2 = vol/min
+		var f1, f2, min = 1440;
+		f1 = ((cro * dil) / crs)
+		f2 = vol / min
 		var resultado = f1 * f2;
 		resultado = +resultado.toFixed(5);
 
@@ -25,12 +25,12 @@ function calcular() {
 
 function limpiar() {
 	const $creaO = document.querySelector('#cro'),
-	$creaS = document.querySelector('#crs'),
-	$dil = document.querySelector('#dil'),
-	$vol = document.querySelector('#vol'),
-	$resultado = document.querySelector('#resultado');
+		$creaS = document.querySelector('#crs'),
+		// $dil = document.querySelector('#dil'),
+		$vol = document.querySelector('#vol'),
+		$resultado = document.querySelector('#resultado');
 
-	$creaO.value ='';
+	$creaO.value = '';
 	$creaS.value = '';
 	$dil.value = '';
 	$vol.value = '';
