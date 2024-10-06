@@ -40,9 +40,9 @@ function calcularHdl(col) {
   var hdl;
   if (col <= 160 && col > 0) {
     hdl = col / 3;
-  } else if (col > 160 && col < 200) {
+  } else if (col > 160 && col < 190) {
     hdl = col / 4;
-  } else if (col > 200) {
+  } else if (col >= 190) {
     hdl = col / 5;
   } else {
     hdl = 0;
